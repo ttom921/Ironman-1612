@@ -71,7 +71,110 @@
 // console.log("Hello World" < 1);//false
 // console.log("Hello World" = 1);//false
 
-console.log(NaN > NaN);//false
-console.log(NaN < NaN);//false
-console.log(NaN === NaN);//false
-console.log(NaN == NaN);//false
+// console.log(NaN > NaN);//false
+// console.log(NaN < NaN);//false
+// console.log(NaN === NaN);//false
+// console.log(NaN == NaN);//false
+
+// // 用 var 宣告一個物件
+// var product = {
+//     name: "apple",
+//     count: 100,
+// }
+// // 
+
+// const product = "100";
+// const shipment = 100;
+// const total = Number(product) + shipment; //200
+// if (product > shipment) {
+//     console.log("But it !");
+// } else {
+//     console.log("Do not buy it!");
+// }
+
+// const count = 50;
+// switch (count) {
+//     case 0:
+//     case 1:
+//     case 2:
+//         console.log("快賣完了！趕快進貨！");
+//         break;
+//     case 50:
+//         console.log("庫存充裕");
+//         break;
+//     case 100:
+//         console.log("是不是賣不後！？")
+//         break;
+//     default:
+//         console.log("運作正常");
+//         break;
+// }
+
+// console.log(!![])//true
+// console.log(!!{}) //true
+// console.log(!!NaN) //false
+
+
+// let product = 5;
+// while (product > 0) {
+//     console.log("買一個");
+//     product--;
+//     console.log(`現在還剩 ${product}個。`);
+// }
+// console.log("全部賣完了");
+
+// let product = 0;
+// while (product > 0) {
+//     console.log("買一個");
+//     product--;
+//     console.log(`現在還剩 ${product}個。`);
+// }
+// console.log("全部賣完了");
+
+// let product = 5;
+// do {
+//     console.log("買一個");
+//     product--;
+//     console.log(`現在還剩 ${product}個。`);
+// } while (product > 0);
+// console.log("全部賣完了");
+
+// let product = 0;
+// do {
+//     console.log("買一個");
+//     product--;
+//     console.log(`現在還剩 ${product}個。`);
+// } while (product > 0);
+// console.log("全部賣完了");
+
+// let product = 5;
+// while (product > 0) {
+//     console.log("買一個");
+//     product--;
+//     console.log(`現在還剩 ${product}個。`);
+
+//     if (product === 2) {
+//         console.log("停停停，不要賣了！快進貨啊。");
+//         break;
+//     }
+// }
+// console.log("全部賣完了");
+
+// let product = 5;
+// while (product > 0) {
+//     console.log("買一個");
+//     product--;
+
+//     if (product === 2) {
+//         console.log("第二個我要暗摃起來");
+//         continue;
+//     }
+//     console.log(`現在還剩 ${product}個。`);
+// }
+// console.log("全部賣完了");
+
+for (let product = 5; product > 0; product--) {
+    console.log("買一個");
+    console.log(`現在還剩 ${product}個。`);
+}
+console.log("全部賣完了");
