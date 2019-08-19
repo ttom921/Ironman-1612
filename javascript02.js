@@ -173,8 +173,93 @@
 // }
 // console.log("全部賣完了");
 
-for (let product = 5; product > 0; product--) {
-    console.log("買一個");
-    console.log(`現在還剩 ${product}個。`);
-}
-console.log("全部賣完了");
+// for (let product = 5; product > 0; product--) {
+//     console.log("買一個");
+//     console.log(`現在還剩 ${product}個。`);
+// }
+// console.log("全部賣完了");
+
+
+// var foo = function () {
+//     console.log("大家好，我是 foo!");
+// }
+// function bar(func) {
+//     func();
+// }
+// bar(foo);// 大家好，我是 foo!
+
+// var foo = function () {
+//     console.log("大家好，我是 foo!");
+// }
+
+// var result = function baz(func) {
+//     return func;
+// }
+
+// result(foo)();
+
+// (function () {
+//     var a=3;
+//     console.log(a);//
+// })();
+
+// // 不污染全域範疇
+// a;//Uncaught ReferenceError:a is not defined
+
+// function closure() {
+//     var a=1;
+//     console.log(a);// 1
+// }
+// closure();
+// a;// Uncaught ReferenceError: a is not defined
+
+// function CoolModule() {
+//     var something = "cool";
+//     var another = [1, 2, 3];
+//     function doSomething() {
+//         console.log(something);
+//     }
+//     function doAnother() {
+//         console.log(another.join(" ! "));
+//     }
+//     return {
+//         doSomething: doSomething,
+//         doAnother: doAnother
+//     };
+// }
+
+// var foo = CoolModule();
+// foo.doSomething();// cool
+// foo.doAnother(); // 1 ! 2 ! 3
+
+// function foo() {
+//     console.log(this.bar);
+// }
+
+// var bar = 'global';
+
+// var obj1 = {
+//     bar: 'obj1',
+//     foo: foo
+// };
+
+// var obj2 = {
+//     bar: 'obj2'
+// };
+// foo();
+// obj1.foo();// obj1 
+// foo.call(obj2);// obj2
+// new foo();
+
+// var foo = { a: 100 };
+
+// var bar = Object.create(foo);// 建立 bar 物件，並連結到 foo
+// bar.b = 'hi';
+
+// bar.a // 100, 委派給 foo
+// bar.b // 'hi'
+
+console.log(isNaN({}));//
+// 拆宗詳細過程如下
+console.log(Number({})); // 先將空物件轉為數字，得到NaN
+console.log(isNaN(NaN)); // 檢查是不否為 NaN，得到true
