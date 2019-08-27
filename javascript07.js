@@ -102,13 +102,96 @@
 // console.log(!!c); // true
 
 
-const a = {
-    toString: function () { return 54321 },
-};
+// const a = {
+//     toString: function () { return 54321 },
+// };
 
-const b = {
-    valueOf: function () { return 12345 },
-};
+// const b = {
+//     valueOf: function () { return 12345 },
+// };
 
-console.log(String(a));// "54321"
-console.log(b+'');// "12345"
+// console.log(String(a));// "54321"
+// console.log(b+'');// "12345"
+
+// console.log((123).toString());
+
+// console.log(+('123'));
+// console.log(-('123'));
+
+// const timestamp = +new Date();
+// console.log(timestamp);//1566871728004 
+
+// const str = 'Hello World';
+
+// function find(target) {
+//     const result = str.indexOf(target);
+//     if (~result) {
+//         console.log(`找到了，索引值原是 ${result},被轉為${~result}`);
+//     } else {
+//         console.log(`找不到了，回傳結果原本是 ${result},被轉為${~result}`);
+//     }
+// }
+// find('llo');
+// find('abc');
+
+// console.log(Math.floor(-29.8));// -30
+// console.log(~~-29.8); // -29
+// console.log(-29.8 | 0); //-29
+
+// var a = '123';
+// var b = '123px';
+
+// console.log(Number(a));  // 123 
+// console.log(parseInt(a));// 123 
+
+
+
+// console.log(Number(b));  // NaN 
+// console.log(parseInt(b));//123
+
+// console.log(parseInt('HelloWorld'));//NaN
+
+// console.log(Boolean('Hello World'));//true
+// console.log(Boolean([]));// true
+// console.log(Boolean({}));// true
+// console.log(Boolean(null));// false
+// console.log(Boolean(undefined));// false
+// console.log(Boolean(NaN));// false
+// console.log(Boolean(0));//false
+// console.log(Boolean(''));// false
+
+// console.log(!!'Hello World');//true
+// console.log(!![]);//true
+// console.log(!!{});//true
+// console.log(!!null);//false
+// console.log(!!undefined);//false
+// console.log(!!NaN);//false
+// console.log(!!0);//false
+// console.log(!!'');//false
+
+// const a = '1';
+// const b = 1;
+// const c = [1, 2];
+// const d = [3, 4];
+
+// console.log(a + 1);//"11"
+// console.log(b + 1);// 2
+// console.log(b + '');// "1"
+// console.log(c + d);// "1,23,4"
+
+// const a = {
+//     toString: function () { return 54321 },
+// };
+// const b = {
+//     valueOf: function () { return 12345 },
+// };
+
+// console.log(String(a));// "54321"
+// console.log(b+ '');// "12345"
+
+const a = '1';
+console.log(a + 1);//"11"
+console.log(a - 0);// 1
+console.log(a * 1);// 1
+console.log(a / 1);// 1
+console.log([9]-[7]);//2
