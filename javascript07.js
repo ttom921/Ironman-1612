@@ -189,9 +189,95 @@
 // console.log(String(a));// "54321"
 // console.log(b+ '');// "12345"
 
-const a = '1';
-console.log(a + 1);//"11"
-console.log(a - 0);// 1
-console.log(a * 1);// 1
-console.log(a / 1);// 1
-console.log([9]-[7]);//2
+// const a = '1';
+// console.log(a + 1);//"11"
+// console.log(a - 0);// 1
+// console.log(a * 1);// 1
+// console.log(a / 1);// 1
+// console.log([9]-[7]);//2
+
+// var a = 12345;
+// var b = 'Hello World';
+// var c;// undefined
+// var d = null;
+// if (a) { //true
+//     console.log('a 是直的');// a 是直的
+// }
+
+// while (c) {//false
+//     console.log('從來沒跑過');
+// }
+// c = d ? a : b;
+// console.log(c);// "Hello World"
+
+// if ((a && d) || c) {
+//     console.log('結果是真的');//結果是真的
+// }
+
+// const a = 'Hello World';
+// const b = 777;
+// const c = null;
+
+// console.log(a && c);//測試 a 為 true，選 c，結果是 null
+// console.log(a && b);//測試 a 為 true，選 b，結果是 777
+// console.log(undefined && b);//測試 undefined 為false，選undefined,結果是 undefined
+// console.log(a || b);//測試 a 為 true，選 a,結果是 "Hello World"
+// console.log(c || 'foo');//測試 c 為 false，選'foo' ，結果是 "foo"
+
+// const flag = true;
+// function foo() {
+//     console.log('try me');
+// }
+
+// flag && foo();//try me
+
+// var s1 = Symbol('Hello World');
+// console.log(String(s1));// "Symbol(Hello World)"
+
+// var s2= Symbol(' World Hello');
+// console.log(s2+'');// TypeError: Cannot convert a Symbol value to a string
+
+// const n1 = Symbol(777);
+// console.log(Number(n1));// TypeError: Cannot convert a Symbol value to a number
+
+// const n2=Symbol(999);
+// console.log(+n2);// TypeError: Cannot convert a Symbol value to a number
+
+// const b1 = Symbol(true);
+// const b2 = Symbol(false);
+// console.log(Boolean(b1));// true
+// console.log(Boolean(b2));// true
+
+// const b3 = Symbol(true);
+// const b4 = Symbol(false);
+
+// if (b3) {
+//     console.log('b3 是直的');
+// }
+// if (b4) {
+//     console.log('b4 是直的');
+// }
+// // b3 是真的
+// // b4 是真的
+
+// const a = '100';
+// const b = 100;
+// console.log(a == b);//true，強制轉型，將字串'100'轉為數字100
+// console.log(a === b);//false
+
+// const a='123';
+// const b=123;
+// console.log(a===b);
+// console.log(a==b);
+
+var a = null;
+var b = Object(a);// 等同於 Object()
+console.log(a == b);//false
+
+var c = undefined;
+var d = Object(c);// 等同於 Object()
+console.log(c == d);//false
+
+var e = NaN;
+var f = Object(e);//等同於new Nummber(e)
+console.log(e == f);//false
