@@ -270,14 +270,56 @@
 // console.log(a===b);
 // console.log(a==b);
 
-var a = null;
-var b = Object(a);// 等同於 Object()
-console.log(a == b);//false
+// var a = null;
+// var b = Object(a);// 等同於 Object()
+// console.log(a == b);//false
 
-var c = undefined;
-var d = Object(c);// 等同於 Object()
-console.log(c == d);//false
+// var c = undefined;
+// var d = Object(c);// 等同於 Object()
+// console.log(c == d);//false
 
-var e = NaN;
-var f = Object(e);//等同於new Nummber(e)
-console.log(e == f);//false
+// var e = NaN;
+// var f = Object(e);//等同於new Nummber(e)
+// console.log(e == f);//false
+
+
+// Number.prototype.valueOf = function () {
+//     return 3;
+// }
+// console.log(new Number(2) == 3);// true
+
+// console.log("0" == false);
+// console.log(false == 0);
+// console.log(false == "");
+// console.log(false == []);
+// console.log(false == {});
+
+// console.log("" == 0);
+// console.log("" == []);
+// console.log("" == {});
+
+// console.log(0 == []);
+// console.log(0 == {});
+
+// console.log([] == ![]);
+
+// console.log(2 == [2]);
+// console.log("" == [null]);
+// console.log(0 == '\n');
+
+
+// const a = [12];
+// const b = ['13'];
+
+// console.log(a < b);// true，'12' < '13'
+// console.log(a > b);// false, 其實是比較 b < a，即 '13' <'12' 
+
+const a = { b: 12 };
+const b = { b: 13 };
+
+console.log(a < b);// false,'[object Object]' < '[object Object]'
+console.log(a > b);// false,其實是比較 b < a，即'[object Object]' < [object Object]
+console.log(a == b);// false,其實是比較兩物件的reference
+
+console.log(a >= b);// true
+console.log(a <= b);// true
