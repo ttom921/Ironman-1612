@@ -134,12 +134,131 @@
 // };
 // [1, 2, 3].forEach(foo, obj); // 1 awesome  2 awesome  3 awesome
 
-function Cat(name) {
-    this.name = name;
-    this.sayHi = function () {
-        console.log('Hi,I am ' + name);
-        console.log(this === kitten);
+// function Cat(name) {
+//     this.name = name;
+//     this.sayHi = function () {
+//         console.log('Hi,I am ' + name);
+//         console.log(this === kitten);
+//     }
+// }
+// var kitten = new Cat('Pusheen');// "Hi, I am Pusheen"
+// kitten.sayHi();// true
+
+// function foo(a, b) {
+//     console.log(`a: ${a}, b: ${b}`);
+// }
+// foo.apply(null, [2, 3]);//a: 2, b: 3
+
+// var bar = foo.bind(null, 4);
+// bar(5);//a: 4, b: 5
+
+
+// function foo(a, b) {
+//     console.log(`a: ${a}, b: ${b}`);
+// }
+// foo(...[1, 2]);// a: 1, b: 2
+
+// function foo(a, b) {
+//     console.log(`a: ${a}, b: ${b}`);
+// }
+// var ø = Object.create(null);// 邁立空物件
+
+// foo.apply(ø, [2, 3]);// a: 2,b: 3
+
+// var bar = foo.bind(ø, 4);
+// bar(5);// a: 4,b: 5
+
+// function foo() {
+//     console.log(this.a);
+// }
+
+// var a = 2;
+// var o = { a: 3, foo: foo };
+// var p = { a: 4 };
+// o.foo();// 3
+// (p.foo = o.foo)();
+
+// if (!Function.prototype.softBind) {
+//     Function.prototype.softBind = function (obj) {
+//         var fn = this,
+//             curried = [].slice.call(arguments, 1),
+//             bound = function bound() {
+//                 return fn.apply(
+//                     /** 
+//                     這裡判斷三種狀況…
+//                       - this 沒有值嗎？例如：undefined
+//                       - this 的值是 window 嗎？
+//                       - this 的值是 global 嗎？
+//                       任一狀況為 true 的話，則就回傳預設要綁定為 this 物件，也就是 obj
+//                     **/
+//                     (!this ||
+//                         (typeof window !== 'undefined' && this === window) ||
+//                         (typeof global !== 'undefined' && this === global)
+//                     ) ? obj : this,
+//                     curried.concat.apply(curried, arguments)
+//                 );
+//             };
+//         bound.prototype = Object.create(fn.prototype);
+//         return bound;
+//     };
+// }
+
+// function foo() {
+//     console.log('name: ' + this.name);
+// }
+
+// var obj = { name: 'obj' };
+// var obj2 = { name: 'obj2' };
+// var obj3 = { name: 'obj3' };
+// var fooOBJ = foo.softBind(obj);
+// fooOBJ();// (1) name: obj <---- 退回到 obj
+// obj2.foo = foo.softBind(obj);
+// obj2.foo();// (2) name:obj2
+// fooOBJ.call(obj3);//(3) name:obj3
+// setTimeout(obj2.foo, 10);//(4) name:obj <---- 退回到 obj
+
+
+// var name = 'Apple';
+// var obj = {
+//     name: 'Jack',
+//     sayHi: function () {
+//         console.log(`Hi, I am ${this.name}`);
+//     }
+// }
+
+// obj.sayHi();
+// setTimeout(obj.sayHi, 1000);
+
+// var name = 'Apple';
+// var obj = {
+//     name: 'Jack',
+//     sayHi: function () {
+//         var _this = this;
+//         setTimeout(function () {
+//             console.log(`Hi, I am ${_this.name}`);
+//         }, 1000);
+//     }
+// }
+// obj.sayHi();
+
+// var name = 'Apple';
+// var obj = {
+//     name: 'Jack',
+//     sayHi: function () {
+//         setTimeout(function () {
+//             console.log(`Hi, I am ${this.name}`);
+//         }.bind(this), 1000);
+//     }
+// }
+// obj.sayHi();// Hi, I am Jack
+
+var name = 'Apple';
+var obj = {
+    name: 'Jack',
+    sayHi: function () {
+        setTimeout(() => {
+            console.log(`Hi, I am ${this.name}`);
+        }, 1000);
     }
 }
-var kitten = new Cat('Pusheen');// "Hi, I am Pusheen"
-kitten.sayHi();// true
+obj.sayHi();// Hi, I am Jack
