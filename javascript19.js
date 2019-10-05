@@ -138,30 +138,68 @@
 
 
 
-function Book(name, pNum) {
-    this.name = name; //書名
-    this.pNum = pNum; //頁數
-    this.comment = null;//評等
-}
-Book.prototype.setComments = function (comment) {
-    this.comment = comment;
-}
+// function Book(name, pNum) {
+//     this.name = name; //書名
+//     this.pNum = pNum; //頁數
+//     this.comment = null;//評等
+// }
+// Book.prototype.setComments = function (comment) {
+//     this.comment = comment;
+// }
 
-function Novel(name, pNum, price) {
-    Book.apply(this, [name, pNum]);//Novel 繼承 Book
-    this.price = price;
-}
-//pre-ES6
-// throws away default existing `Novel.prototype`
-Novel.prototype = Object.create(Book.prototype);
+// function Novel(name, pNum, price) {
+//     Book.apply(this, [name, pNum]);//Novel 繼承 Book
+//     this.price = price;
+// }
+// //pre-ES6
+// // throws away default existing `Novel.prototype`
+// Novel.prototype = Object.create(Book.prototype);
 
-//ES6+
-// modifies existing `Novel.prototype`
-Object.setPrototypeOf(Novel.prototype, Book.prototype);
+// //ES6+
+// // modifies existing `Novel.prototype`
+// Object.setPrototypeOf(Novel.prototype, Book.prototype);
 
-var ydkjs_1 = new Book('導讀，型別與文法', 257);
-var ydkjs_2 = new Book('範疇與閉包 / this 與物件原型', 251);
-var novel = new Novel('最近沒在看小說 ><', 500, 600);
+// var ydkjs_1 = new Book('導讀，型別與文法', 257);
+// var ydkjs_2 = new Book('範疇與閉包 / this 與物件原型', 251);
+// var novel = new Novel('最近沒在看小說 ><', 500, 600);
 
-console.log(Object.getPrototypeOf(ydkjs_1) === Book.prototype);//true
-console.log(ydkjs_1.__proto__ === Book.prototype);//true
+// // console.log(Object.getPrototypeOf(ydkjs_1) === Book.prototype);//true
+// // console.log(ydkjs_1.__proto__ === Book.prototype);//true
+
+// console.log(ydkjs_1.__proto__ === Book.prototype);//true
+// console.log(Book.__proto__ === Function.prototype);//true
+// console.log(Book.prototype.__proto__ === Object.prototype);//true
+// console.log(Object.prototype.__proto__);//null
+
+
+// const obj = {
+//     counter: 0,
+// };
+// const anotherObj = Object.create(obj);
+// anotherObj.counter++;// 一時手誤，應改為obj.counter++
+
+// console.log(obj.counter);//0
+// console.log(anotherObj.counter);//1
+
+// obj.counter++;
+// anotherObj.counter++;
+
+// console.log(obj.counter);//1
+// console.log(anotherObj.counter);//2
+
+
+// var person = {
+//     name: null,
+//     sayHi: function (name) {
+//         this.name = name;
+//         console.log(`Hi, I am ${this.name}`);
+//     }
+// };
+
+// var coolPerson = Object.create(person);// coolPerson.__proto__ === person
+// coolPerson.sayHi('Jack');// Hi, I am Jack
+
+
+var empty = Object.create(null);
+empty;//{}
+console.log(empty.__proto__);// undefined--很空，什麼都沒有
